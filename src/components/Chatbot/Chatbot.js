@@ -1,6 +1,7 @@
 import React, { useRef, useState } from "react";
 import AvatarVideo from "../../assets/avatar-video.mp4";
 import TestVideo from "../../assets/test.mp4";
+import {AiOutlineSend} from 'react-icons/ai'
 function Chatbot() {
   const videoRef = useRef("videoref");
   const [input, setInput] = useState("");
@@ -51,9 +52,9 @@ function Chatbot() {
     setInput("");
   };
   return (
-    <div className="w-3/6 m-auto ">
+    <div className="w-3/6 m-auto mt-5">
       <div className="flex justify-center">
-        <video ref={videoRef} autoPlay={true} loop class="rounded-full w-60">
+        <video ref={videoRef} autoPlay={true} loop class="rounded-full w-52">
           <source src={AvatarVideo} type="video/mp4" />
           Your browser does not support the video tag.
         </video>
@@ -85,14 +86,18 @@ function Chatbot() {
       </div>
 
       {/* Input Box  */}
-      <div className="mt-5">
+      <div className="mt-5 fixed bottom-3  w-3/6 flex items-center gap-2">
         <input
           onChange={(e) => setInput(e.target.value)}
           value={input}
           type="text"
           placeholder="write your prompt.."
+          className=" border-[1px] w-full py-2 px-4 rounded-3xl outline-[#7459fe]"
         />
-        <button onClick={promptHandler}>Submit</button>
+        
+       <div className="bg-[#7459fe] p-2 rounded-3xl cursor-pointer" onClick={promptHandler} >
+       <AiOutlineSend className=" text-white text-xl" />
+       </div>
       </div>
     </div>
   );
