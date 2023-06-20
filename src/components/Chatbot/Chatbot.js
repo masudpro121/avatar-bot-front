@@ -1,5 +1,5 @@
 import React, { useRef, useState } from 'react'
-import DemoVideo from '../../assets/user.mp4'
+import DemoVideo from '../../assets/avatar-video.mp4'
 import TestVideo from '../../assets/test.mp4'
 function Chatbot() {
   const videoRef = useRef('videoref')
